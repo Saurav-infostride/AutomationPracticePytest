@@ -8,7 +8,7 @@
 # import pytest
 # import allure 
 # from Pages.AddToCartPage import AddToCartPage
-# from Pages.CheckoutYourInfoPage import CheckoutYourInfoPage
+# from Pages.BillingDetailsPage import BillingDetailsPage
 # from allure_commons.types import AttachmentType
 # from Tests.test_Base import BaseTest
 # from Pages.HomePage import HomePage
@@ -27,7 +27,7 @@
 #     #     homePage.is_cart_icon_clickable()
 #     #     self.addToCart = AddToCartPage(self.driver)
 #     #     self.addToCart.do_click_checkout_button()
-#     #     self.checkInfo = CheckoutYourInfoPage(self.driver)
+#     #     self.checkInfo = BillingDetailsPage(self.driver)
 #     #     self.checkInfo.do_enter_your_info()  
 #     #     self.checkInfo.do_click(Locators.CONTINUE_BUTTON)
 #     #     self.checkoutOverview = CheckoutOverviewPage

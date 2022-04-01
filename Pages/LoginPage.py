@@ -6,7 +6,6 @@ from pytest import yield_fixture
 myPath = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, myPath + '/../')
 
-import xlrd
 from Locators.Locators import Locators
 from Config.config import TestData
 from Pages.HomePage import HomePage

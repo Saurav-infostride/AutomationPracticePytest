@@ -29,7 +29,7 @@ class Test_AddTOCartPage(BaseTest):
                     
         # assert cart_title == TestData.CART_PAGE_TITLE
 
-    @pytest.mark.order(12)
+    @pytest.mark.order()
     def test_verify_checkout_button(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()

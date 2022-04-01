@@ -4,7 +4,7 @@ sys.path.insert(0, myPath + '/../')
 
 from Locators.Locators import Locators
 from Pages.BasePage import BasePage
-from Pages.CheckoutYourInfoPage import CheckoutYourInfoPage
+from Pages.BillingDetailsPage import BillingDetailsPage
 
 class AddToCartPage(BasePage):
 
@@ -19,5 +19,5 @@ class AddToCartPage(BasePage):
 
         def do_click_checkout_button(self):
             self.do_click(Locators.CHECKOUT_BUTTON)
-            return CheckoutYourInfoPage(self.driver)
+            return BillingDetailsPage(self.driver)
 

@@ -12,7 +12,7 @@ from Pages.LoginPage import LoginPage
 
 class Test_Home(BaseTest):
     
-    @pytest.mark.order(4)
+    @pytest.mark.order()
     def test_verify_home_page_title(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
@@ -20,7 +20,7 @@ class Test_Home(BaseTest):
         assert title == TestData.HOME_PAGE_TITLE
         allure.attach(self.driver.get_screenshot_as_png(), attachment_type=AttachmentType.JPG)
 
-    @pytest.mark.order(1)
+    @pytest.mark.order()
     def test_verify_home_page_header(self): 
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
@@ -28,7 +28,7 @@ class Test_Home(BaseTest):
         allure.attach(self.driver.get_screenshot_as_png(), attachment_type=AttachmentType.JPG)
         assert header == TestData.HOME_PAGE_HEADER
 
-    @pytest.mark.order(2)
+    @pytest.mark.order()
     def test_verify_cart_icon_visible(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
@@ -36,7 +36,7 @@ class Test_Home(BaseTest):
         assert cart_icon
         allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.JPG)
 
-    @pytest.mark.order(3)
+    @pytest.mark.order()
     def test_verify_logout_into_app(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()

@@ -24,10 +24,8 @@ class HomePage(BasePage):
     def get_header_value(self):
         return self.get_element_text(Locators.HEADER)
 
-    ''' Add to Cart functionality'''
     def do_shopping(self):
         self.do_click(Locators.ANDROID_QUICK_START_GUIDE)
-        self.do_click(Locators.HTML5_FORMS)
 
     def do_logout(self):
         self.do_click(Locators.MY_ACCOUNT_TAB)

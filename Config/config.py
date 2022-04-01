@@ -20,10 +20,16 @@ class TestData:
     '''cart page'''
     CART_PAGE_TITLE = "Product"
 
-    '''Check out your Info page'''
+    '''Billing details'''
     FIRST_NAME = "Jack"
     LAST_NAME = "Swagger"
     COMPANY_NAME = "INFOSTRIDE"
+    PHONE = 7206600001
+    ADDRESS = "#01, Phase-8"
+    TOWN_CITY = "Mohali"
+    STATE_COUNTY = "PUNJAB"
+    POSTAL_ZIP_CODE = 1650001
+      
 
     '''Checkout overview page'''
     CHECOUT_OVERVIEW_TITLE = "Checkout: Overview"

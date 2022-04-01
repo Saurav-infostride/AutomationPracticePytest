@@ -25,12 +25,18 @@ class Locators:
     ITEM_1 = (By.XPATH, "//a[text()='Android Quick Start Guide']")
     CHECKOUT_BUTTON = (By.XPATH, "//a[@class='checkout-button button alt wc-forward']")
 
-    '''CHECKOUT: YOUR INFORMATION'''
-    CHECKOUT_YOUR_INFO = (By.XPATH, "//span[text()='Checkout: Your Information']")
-    FIRST_NAME = (By.ID, "first-name")
-    LAST_NAME = (By.ID, "last-name")
-    COMPANY_NAME = (By.ID, "postal-code")
+    '''Billing Details Page'''
+    FIRST_NAME = (By.XPATH, "//input[@id='billing_first_name']")
+    LAST_NAME = (By.XPATH, "//input[@id='billing_last_name']")
+    COMPANY_NAME = (By.XPATH, "//input[@id='billing_company']")
+    PHONE = (By.XPATH, "//input[@id='billing_phone']")
+    ADDRESS = (By.XPATH, "//input[@id='billing_address_1']")
+    TOWN_CITY = (By.XPATH, "//*[@id='billing_city']")
+    STATE_COUNTY = (By.XPATH, "//*[@id='select2-chosen-2']")
+    POSTAL_ZIP_CODE = (By.XPATH, "//input[@id='billing_postcode']")
+    PAYPAL_EXPRESS_CHECKOUT = (By.XPATH, "//input[@value='ppec_paypal']")
     PLACE_ORDER_BUTTON = (By.ID, "continue")
+    
 
     '''Checkout overview page'''
     CHECOUT_OVERVIEW_TITLE = (By.XPATH, "Checkout: Overview")
