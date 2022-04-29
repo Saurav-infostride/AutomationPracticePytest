@@ -11,6 +11,9 @@ from Config.config import TestData
 from Pages.HomePage import HomePage
 from Pages.BasePage import BasePage
 
+import logging
+log = logging.getLogger(__name__)
+
 class LoginPage(BasePage):
 
     '''constructor of the page class'''

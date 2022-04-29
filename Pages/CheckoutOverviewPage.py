@@ -5,6 +5,8 @@ sys.path.insert(0, myPath + '/../')
 import time
 from Locators.Locators import Locators
 from Pages.BasePage import BasePage
+import logging
+log = logging.getLogger(__name__)
 
 class CheckoutOverviewPage(BasePage):
 

@@ -1,6 +1,4 @@
 import sys, os
-
-from Pages.HomePage import HomePage
 myPath = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, myPath + '/../')
 
@@ -12,38 +10,30 @@ from Locators.Locators import Locators
 from Tests.test_Base import BaseTest
 from Config.config import TestData
 from Pages.LoginPage import LoginPage
+from Pages.HomePage import HomePage
+from Pages.AddToCartPage import AddToCartPage
 
 class Test_AddTOCartPage(BaseTest):
     
     @pytest.mark.order()
-    def test_verify_cart_page_title(self):
+    def test_verify_cart_page_header(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
-        addToCartPage = homePage
+        homePage = HomePage(self.driver)
+        homePage.do_shopping()
         homePage.do_click(Locators.CART_ICON)
-        cart_title = addToCartPage.get_element_text(Locators.CART_PAGE_TITLE)
-        if cart_title == TestData.CART_PAGE_TITLE:
-            pass
-        else:
-            allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
-                    
-        # assert cart_title == TestData.CART_PAGE_TITLE
-
-    @pytest.mark.order()
-    def test_verify_checkout_button(self):
-        self.loginPage = LoginPage(self.driver)
-        homePage = self.loginPage.do_login()
-        addToCartPage = homePage
-        homePage.do_click(Locators.CART_ICON)
-        addToCartPage.do_click(Locators.CHECKOUT_BUTTON)
-        # allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
+        addToCart = AddToCartPage(self.driver)
+        cart_title = addToCart.get_header_name_of_cart_page()
+        assert cart_title == TestData.CART_PAGE_TITLE
+        allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
 
     @pytest.mark.order()
     def test_verify_item_1_in_cart(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
-        self.homePage = HomePage(self.driver)
-        addToCartPage = self.homePage
+        homePage = HomePage(self.driver)
         homePage.do_shopping()
         homePage.do_click(Locators.CART_ICON)
-        assert addToCartPage.is_visible(Locators.ITEM_1)
+        addToCart = AddToCartPage(self.driver)
+        addToCart.do_items_exist_in_cart()
+        addToCart.do_click_checkout_button()

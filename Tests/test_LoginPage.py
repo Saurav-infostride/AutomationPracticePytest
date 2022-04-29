@@ -34,10 +34,7 @@ class Test_Login(BaseTest):
         self.loginPage = LoginPage(self.driver)
         self.loginPage.do_login_with_incorrect_credentials()
         error_msg = self.loginPage.get_element_text(Locators.ERROR_MESSAGE)
-        if error_msg == TestData.LOGIN_WITH_INCORRECT_CREDENTIALS_MESSAGE:
-            allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
-            print(error_msg)
-        else:
-            pass
-
+        assert error_msg == TestData.LOGIN_WITH_INCORRECT_CREDENTIALS_MESSAGE
+        print(error_msg)
+        allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
 

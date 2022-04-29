@@ -37,6 +37,13 @@ class Test_Home(BaseTest):
         allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.JPG)
 
     @pytest.mark.order()
+    def test_verify_shopping(self):
+        self.loginPage = LoginPage(self.driver)
+        homePage = self.loginPage.do_login()
+        homePage.do_shopping()
+        allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
+
+    @pytest.mark.order()
     def test_verify_logout_into_app(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
